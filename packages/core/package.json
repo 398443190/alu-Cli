@@ -6,6 +6,9 @@
   "homepage": "",
   "license": "ISC",
   "main": "lib/index.js",
+  "bin": {
+    "alu-cli":"bin/index.js"
+  },
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -18,5 +21,6 @@
   },
   "dependencies": {
     "@alu-cli/utils": "^0.0.2"
-  }
+  },
+  "gitHead": "7690ce830bf078621d8be965986a60f8354e938d"
 }
