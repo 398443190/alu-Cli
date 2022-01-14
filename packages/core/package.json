@@ -1,6 +1,6 @@
 {
   "name": "@alu-cli/core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "alu-cli core",
   "author": "alu <398443190@qq.com>",
   "homepage": "",
@@ -17,6 +17,6 @@
     "test": "echo \"Run testing from core\""
   },
   "dependencies": {
-    "@alu-cli/utils": "^0.0.1"
+    "@alu-cli/utils": "^0.0.2"
   }
 }
