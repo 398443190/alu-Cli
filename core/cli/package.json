@@ -20,7 +20,9 @@
     "test": "echo \"Run testing from core\""
   },
   "dependencies": {
-    "@alu-cli/utils": "^0.0.3"
+    "@alu-cli/utils": "file:../../utils/utils",
+    "import-local": "^3.1.0",
+    "npmlog": "^6.0.0"
   },
   "gitHead": "7690ce830bf078621d8be965986a60f8354e938d",
   "publishConfig": {
