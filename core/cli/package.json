@@ -20,14 +20,15 @@
     "test": "echo \"Run testing from core\""
   },
   "dependencies": {
+    "@alu-cli/exec": "file:../exec",
     "@alu-cli/get-npm-info": "file:../../utils/get-npm-info",
     "@alu-cli/log": "file:../../utils/log",
     "@alu-cli/utils": "file:../../utils/utils",
+    "@alu-cli/commands": "file:../../commands/init",
     "colors": "^1.4.0",
     "commander": "^8.3.0",
     "dotenv": "^14.1.0",
     "import-local": "^3.1.0",
-    "minimist": "1.2.5",
     "npmlog": "^6.0.0",
     "path-exists": "4.0.0",
     "root-check": "^1.0.0",
