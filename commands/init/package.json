@@ -29,9 +29,11 @@
   "dependencies": {
     "@alu-cli/command": "file:../../models/command",
     "@alu-cli/log": "file:../../utils/log",
+    "@alu-cli/package": "file:../../models/package",
     "@alu-cli/request": "file:../../utils/request",
     "fs-extra": "^9.0.1",
     "inquirer": "^8.2.0",
-    "semver": "^7.3.5"
+    "semver": "^7.3.5",
+    "user-home": "^2.0.0"
   }
 }

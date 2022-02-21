@@ -15,7 +15,11 @@ const fse = require('fs-extra')
 const inquirer = require('inquirer');
 const semver = require('semver');
 
+const userHome = require('user-home')
+const path = require('path')
+
 const getProjectTemplate = require('./getProjectTemplate')
+const Package = require("@alu-cli/package")
 
 const TYPE_PROJECT = 'project'
 const TYPE_COMPONENTS = 'components'
@@ -41,7 +45,7 @@ class InitCommand extends Command {
             if (projectInfo) {
                 log.verbose('projectInfo:', projectInfo)
                 this.projectInfo = projectInfo;
-                this.downLoadTemplate()
+                await this.downLoadTemplate()
             }
             // 3.安装模版
         } catch (e) {
@@ -185,9 +189,28 @@ class InitCommand extends Command {
             name: item.name
         }))
     }
-    downLoadTemplate() {
-        console.log(this.projectInfo, 'projectInfo')
-        console.log(this.template, 'template')
+    async downLoadTemplate() {
+        // console.log(this.projectInfo, 'projectInfo')
+        // console.log(this.template, 'template')
+        const { projectTemplate } = this.projectInfo
+        const templateInfo = this.template.find(template => template.npmName === projectTemplate)
+        console.log(templateInfo, 'templateInfo')
+        const targetPath = path.resolve(userHome, '.alu-cli', 'template')
+        const storeDir = path.resolve(userHome, '.alu-cli', 'template', 'node_modules')
+        console.log(targetPath, 'targetPathtargetPath')
+        console.log(storeDir, 'storeDirstoreDirstoreDir')
+        const {npmName, version} = templateInfo
+        const templateNpm = new Package({
+            targetPath,
+            storeDir,
+            packageName: npmName,
+            packageVersion:version
+        })
+        if (!await templateNpm.exists()) {
+            await templateNpm.install()
+        } else {
+            await templateNpm.update()
+        }
         // 1通过项目模版api 获取项目模版信息
         // 1.1通过egg.js搭建一套后端系统
         // 1.2通过npm存储项目模版
