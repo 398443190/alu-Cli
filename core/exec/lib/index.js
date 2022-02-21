@@ -2,7 +2,7 @@
 
 
 
-const Package = require("@alu-cli/package")
+const Package = require("@alu-cli/package")//我在桌面下
 const log = require('@alu-cli/log'); // npmlog包
 const path = require('path')
 const cp = require('child_process')// 引用node子进程库
@@ -67,7 +67,6 @@ async function exec() {
             })
             args[args.length - 1] = o
             const code = `require('${rootFile}').call(null, ${JSON.stringify(args)})`;
-            const code = 'console.log(111)'
             const child = customSpawn('node', ['-e', code], { // 兼容win  自定义spawn方法
                 cwd: process.cwd(),
                 stdio: 'inherit'
