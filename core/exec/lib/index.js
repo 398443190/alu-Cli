@@ -67,7 +67,7 @@ async function exec() {
             })
             args[args.length - 1] = o
             const code = `require('${rootFile}').call(null, ${JSON.stringify(args)})`;
-            //const code = 'console.log(111)'
+            const code = 'console.log(111)'
             const child = customSpawn('node', ['-e', code], { // 兼容win  自定义spawn方法
                 cwd: process.cwd(),
                 stdio: 'inherit'
@@ -90,7 +90,7 @@ async function exec() {
         const win32 = process.platform === 'win32'
         const cmd = win32 ? 'cmd' : command;
         const cmdArgs = win32 ? ['/c'].concat(command, args) : args;
-        // console.log(process.platform,'process.platformprocess.platform')
+        console.log(process.platform,'process.platformprocess.platform')
         return cp.spawn(cmd,cmdArgs,options || {})
     }
 }

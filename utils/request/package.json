@@ -1,7 +1,7 @@
 {
-  "name": "@alu-cli/init",
-  "version": "1.0.2",
-  "description": "alu-cli init",
+  "name": "@alu-cli/request",
+  "version": "1.0.0",
+  "description": "> TODO: description",
   "author": "alu <398443190@qq.com>",
   "homepage": "https://github.com/398443190/alu-cli#readme",
   "license": "ISC",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/398443190/alu-cli.git"
+    "url": "git+https://398443190@github.com/398443190/alu-cli.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
@@ -27,11 +27,6 @@
     "url": "https://github.com/398443190/alu-cli/issues"
   },
   "dependencies": {
-    "@alu-cli/command": "file:../../models/command",
-    "@alu-cli/log": "file:../../utils/log",
-    "@alu-cli/request": "file:../../utils/request",
-    "fs-extra": "^9.0.1",
-    "inquirer": "^8.2.0",
-    "semver": "^7.3.5"
+    "axios": "^0.26.0"
   }
 }
